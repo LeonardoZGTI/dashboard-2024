@@ -1,0 +1,27 @@
+@font-face {
+  font-family: Unageo-bold;
+  src: url('font/Unageo-Bold-BF65baf2f118643.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: Unageo-regular;
+  src: url('font/Unageo-Regular-BF65baf2f19dc5f.ttf') format('truetype');
+  font-weight: regular;
+  font-style: regular;
+}
+
+*, p, h2, br, html {  
+  margin: 0px;
+  padding: 0px;
+  }
+  
+  body {
+    display: grid;
+    max-width: 100%;
+    font-family: Unageo-bold;
+    align-self: center;
+    justify-items: center;
+    gap: 53px;
+  }
