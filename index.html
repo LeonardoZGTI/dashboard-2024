@@ -1,36 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard 2024</title>
   <link rel="stylesheet" href="import.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Faturamento Anual</h1>
-  </header>
-  <main>
-    <article class="grafico-bg">
-      <div class="titulo-grafico">
-        <h2>Percentual</h2>
-        <p>Faturamento</p>
-      </div>
-      <canvas>
-      </canvas>
-    </article>
-    <article class="conteudo-bg">
-      <div class="conteudo-titulo">
-        <h2>Informação ao vivo</h2>
-        <p>Última atualização:</p>
-      </div>
-      <canvas>
-      </canvas>
-    </article>
-  </main>
-  <footer>
-    <h2>Zero Grau</h2>
-  </footer>
+    <header class="header-bg">
+      <h1>faturamento anual</h1>
+    </header>
+    <main class="principal">
+      <section class="grafico">
+        <div class="grafico-texto">
+          <h2>percentual</h2>
+          <p>faturamento</p>
+        </div>
+        <div class="circulo-progresso">
+          <div class="circulo-borda">
+            <div class="circulo-interno"></div>
+          </div>
+        </div>
+      </section>
+      <section class="informacoes">
+        <div class="informacoes-texto">
+          <h2>informação ao vivo</h2>
+          <p>última atualização:</p>
+        </div>
+        <div class="grafico-barras">
+          <p>meta anual: R$ 130 Milhões</p>
+          <div class="barra-meta"></div>
+          <p>faturamento anual: R$ 85.4 Milhões</p>
+          <div class="barra-faturamento"></div>
+        </div>
+        <div class="legenda">
+          <div class="icone-legenda1"></div>
+          <p>meta</p>
+          <div class="icone-legenda2"></div>
+          <p>faturamento</p>
+        </div>
+      </section>
+    </main>
 </body>
 </html>

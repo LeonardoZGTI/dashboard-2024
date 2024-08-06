@@ -12,16 +12,16 @@
   font-style: regular;
 }
 
-*, p, h2, br, html {  
-  margin: 0px;
+*, h1, h2, h3 , p {
   padding: 0px;
-  }
-  
-  body {
-    display: grid;
-    max-width: 100%;
-    font-family: Unageo-bold;
-    align-self: center;
-    justify-items: center;
-    gap: 53px;
-  }
+  margin: 0px;
+}
+
+body {
+  max-width: 100%;
+  font-family: Unageo-regular;
+  font-weight: regular;
+  background-color: #d8dfea;
+  display: grid;
+  justify-items: center;
+}
