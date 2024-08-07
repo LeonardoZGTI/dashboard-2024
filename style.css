@@ -24,43 +24,79 @@
   border-bottom-left-radius: 18px;
 }
 
-.grafico-texto h2,
+.grafico-texto h2 {
+  font-size: 36px;
+}
+
 .informacoes-texto h2 {
-  font-size: 30px;
+  font-size: 28px;
   font-family: Unageo-bold;
   text-transform: capitalize;
 }
 
 .grafico-texto p,
 .informacoes-texto p {
-  font-size: 20px;
+  font-size: 32px;
   font-family: Unageo-regular;
   text-transform: capitalize;
 }
 
-.circulo-progresso {
-  justify-self: center;
+.progress {
+  display: grid;
+  justify-content: center;
+  margin: 20px 0px;
 }
 
-.circulo-borda {
-  content: "";
-  width: 300px;
-  height: 300px;
-  background-color: blue;
+/* inicio stilo do circulo de progresso */
+@keyframes progress {
+  0% { --percentage: 0; }
+  100% { --percentage: var(--value); }
+}
+
+@property --percentage {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+[role="progressbar"] {
+  --percentage: var(--value);
+  --primary: #57d989;
+  --secondary: #5394ff;
+  --size: 300px;
+  animation: progress 2s 0.5s forwards;
+  width: var(--size);
+  aspect-ratio: 1;
   border-radius: 50%;
   position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
 }
 
-.circulo-interno {
+[role="progressbar"]::before {
   content: "";
-  width: 250px;
-  height: 250px;
-  background-color: green;
-  border-radius: 50%;
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 55%, #000 0);
+  -webkit-mask-mode: alpha;
 }
+
+[role="progressbar"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+  font-family: Unageo-bold;
+  font-size: calc(var(--size) / 5);
+  color: black;
+}
+
+/* final  */
 
 .informacoes {
   padding: 40px;
@@ -115,4 +151,29 @@
   width: 20px;
   height: 20px;
   background-color: #57d989;
+}
+
+.footer-bg {
+  font-family: Unageo-bold;
+  font-size: 30px;
+  box-sizing: border-box;
+}
+
+/* responsivo */
+@media (max-width: 420px) {
+  .principal {
+    grid-template-columns: 1fr;
+    width: 700px;
+  }
+
+  .grafico {
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .informacoes {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 18px;
+  }
 }
